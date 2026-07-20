@@ -14,7 +14,7 @@
       poster="/images/poster-sede.webp"
       id="hero-bg-video"
       class="w-full h-full object-cover"
-      style="opacity: 0.25; filter: brightness(0.7) contrast(1.1); transition: opacity 1.2s ease-in-out;"
+      style="opacity: 0.45; filter: brightness(0.7) contrast(1.1); transition: opacity 1.2s ease-in-out;"
     >
       <source src="/videos/hero-bg.webm" type="video/webm" />
       <source src="/videos/hero-bg.mp4" type="video/mp4" />
@@ -104,7 +104,7 @@
       // Reset opacity back to normal once loop starts
       if (currentTime < 0.8 && fadingOut) {
         fadingOut = false;
-        video.style.opacity = '0.25';
+        video.style.opacity = '0.45';
       }
     });
 
@@ -112,7 +112,7 @@
     video.addEventListener('seeked', () => {
       if (video.currentTime < 1) {
         fadingOut = false;
-        video.style.opacity = '0.25';
+        video.style.opacity = '0.45';
       }
     });
   })();
