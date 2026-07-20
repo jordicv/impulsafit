@@ -309,13 +309,13 @@ import claudioImg from '../assets/images/claudio.JPG';
       });
     });
 
-    // Auto-advance loop (every 4.5 seconds)
+    // Auto-advance loop (every 2.8 seconds)
     autoplayInterval = setInterval(() => {
       if (!hasInteracted) {
         let nextIndex = (activeIndex + 1) % cards.length;
         activateStep(nextIndex);
       }
-    }, 4500);
+    }, 2800);
   }
 
   // Hook to page load and View Transitions
