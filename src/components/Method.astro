@@ -213,9 +213,14 @@ import claudioImg from '../assets/images/claudio.JPG';
   </div>
 </section>
 
-<!-- SECTION 4: COMPARISON TABLE (DIFERENCIADORES) -->
-<section class="py-24 bg-[#050505] border-b border-[#ffffff0a] relative">
-  <div class="max-w-5xl mx-auto px-6">
+<!-- SECTION 4: COMPARISON TABLE (DIFERENCIADORES - LIQUID GLASS) -->
+<section class="py-24 bg-[#050505] border-b border-[#ffffff0a] relative overflow-hidden">
+  
+  <!-- Under-glow Liquid Blobs -->
+  <div class="absolute w-[450px] h-[450px] rounded-full bg-white/[0.02] blur-[110px] -top-24 -left-36 pointer-events-none z-0"></div>
+  <div class="absolute w-[400px] h-[400px] rounded-full bg-white/[0.02] blur-[100px] -bottom-24 -right-36 pointer-events-none z-0"></div>
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
     <div class="text-center max-w-2xl mx-auto mb-16 reveal">
       <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
         La Diferencia <span class="text-metallic font-black">Real</span>
@@ -225,52 +230,56 @@ import claudioImg from '../assets/images/claudio.JPG';
       </p>
     </div>
 
-    <!-- Table Wrapper -->
-    <div class="overflow-x-auto border border-[#ffffff08] rounded-lg reveal delay-100 bg-black">
+    <!-- Table Wrapper: Liquid Glass Container -->
+    <div class="overflow-x-auto border border-white/10 rounded-2xl reveal delay-100 bg-[#0b0b0b]/40 backdrop-blur-xl shadow-2xl shadow-black/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
       <table class="w-full text-left border-collapse select-none">
         <thead>
-          <tr class="border-b border-[#ffffff0a] bg-[#0b0b0b]">
-            <th class="p-6 text-sm font-bold tracking-widest text-[#737373] uppercase">SERVICIO</th>
-            <th class="p-6 text-sm font-bold tracking-widest text-[#737373] uppercase">GYM TRADICIONAL</th>
-            <th class="p-6 text-sm font-bold tracking-widest text-white uppercase bg-neutral-900">IMPULSA FIT</th>
+          <tr class="border-b border-white/10 bg-white/[0.02]">
+            <th class="p-6 text-xs font-bold tracking-widest text-[#737373] uppercase">SERVICIO</th>
+            <th class="p-6 text-xs font-bold tracking-widest text-[#737373] uppercase">GYM TRADICIONAL</th>
+            <!-- Highlighted Header -->
+            <th class="p-6 text-xs font-bold tracking-widest text-white uppercase bg-white/[0.05] border-l border-r border-white/10 relative shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+              IMPULSA FIT
+              <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+            </th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-[#ffffff05] text-sm">
+        <tbody class="divide-y divide-white/[0.05] text-sm">
           
-          <tr>
-            <td class="p-6 font-bold text-white">Coaches en Sala</td>
-            <td class="p-6 text-[#737373]">1 profesor para 50+ personas</td>
-            <td class="p-6 text-white font-medium bg-neutral-900">Máximo 3 alumnos por Coach</td>
+          <tr class="hover:bg-white/[0.01] transition-colors duration-150">
+            <td class="p-6 font-bold text-white uppercase tracking-wide text-xs">Coaches en Sala</td>
+            <td class="p-6 text-[#737373] font-light">1 profesor para 50+ personas</td>
+            <td class="p-6 text-white font-medium bg-white/[0.03] border-l border-r border-white/5">Máximo 3 alumnos por Coach</td>
           </tr>
 
-          <tr>
-            <td class="p-6 font-bold text-white">Planificación de Fuerza</td>
-            <td class="p-6 text-[#737373]">Rutina estandarizada igual para todos</td>
-            <td class="p-6 text-white font-medium bg-neutral-900">Estructura 100% individual</td>
+          <tr class="hover:bg-white/[0.01] transition-colors duration-150">
+            <td class="p-6 font-bold text-white uppercase tracking-wide text-xs">Planificación de Fuerza</td>
+            <td class="p-6 text-[#737373] font-light">Rutina estandarizada igual para todos</td>
+            <td class="p-6 text-white font-medium bg-white/[0.03] border-l border-r border-white/5">Estructura 100% individual</td>
           </tr>
 
-          <tr>
-            <td class="p-6 font-bold text-white">Protocolo de Lesiones</td>
-            <td class="p-6 text-[#737373]">Entrenas bajo tu propio riesgo</td>
-            <td class="p-6 text-white font-medium bg-neutral-900">Plan adaptado a lesiones clínicas</td>
+          <tr class="hover:bg-white/[0.01] transition-colors duration-150">
+            <td class="p-6 font-bold text-white uppercase tracking-wide text-xs">Protocolo de Lesiones</td>
+            <td class="p-6 text-[#737373] font-light">Entrenas bajo tu propio riesgo</td>
+            <td class="p-6 text-white font-medium bg-white/[0.03] border-l border-r border-white/5">Plan adaptado a lesiones clínicas</td>
           </tr>
 
-          <tr>
-            <td class="p-6 font-bold text-white">Evaluación Nutricional</td>
-            <td class="p-6 text-[#737373]">No incluye (cobro extra alto)</td>
-            <td class="p-6 text-white font-medium bg-neutral-900">Incluido en membresía</td>
+          <tr class="hover:bg-white/[0.01] transition-colors duration-150">
+            <td class="p-6 font-bold text-white uppercase tracking-wide text-xs">Evaluación Nutricional</td>
+            <td class="p-6 text-[#737373] font-light">No incluye (cobro extra alto)</td>
+            <td class="p-6 text-white font-medium bg-white/[0.03] border-l border-r border-white/5">Incluido en membresía</td>
           </tr>
 
-          <tr>
-            <td class="p-6 font-bold text-white">Aglomeraciones</td>
-            <td class="p-6 text-[#737373]">Frecuentes, esperas largas por máquinas</td>
-            <td class="p-6 text-white font-medium bg-neutral-900">Sin esperas, aforo estrictamente limitado</td>
+          <tr class="hover:bg-white/[0.01] transition-colors duration-150">
+            <td class="p-6 font-bold text-white uppercase tracking-wide text-xs">Aglomeraciones</td>
+            <td class="p-6 text-[#737373] font-light">Frecuentes, esperas largas por máquinas</td>
+            <td class="p-6 text-white font-medium bg-white/[0.03] border-l border-r border-white/5">Sin esperas, aforo estrictamente limitado</td>
           </tr>
 
-          <tr>
-            <td class="p-6 font-bold text-white">Agendamiento</td>
-            <td class="p-6 text-[#737373]">Fijo o sin control (esperas fila)</td>
-            <td class="p-6 text-white font-medium bg-neutral-900">Flexible vía App Fiti</td>
+          <tr class="hover:bg-white/[0.01] transition-colors duration-150">
+            <td class="p-6 font-bold text-white uppercase tracking-wide text-xs">Agendamiento</td>
+            <td class="p-6 text-[#737373] font-light">Fijo o sin control (esperas fila)</td>
+            <td class="p-6 text-white font-medium bg-white/[0.03] border-l border-r border-white/5">Flexible vía App Fiti</td>
           </tr>
 
         </tbody>
