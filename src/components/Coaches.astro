@@ -1,0 +1,94 @@
+---
+// Coaches.astro - Introducing the team of professionals
+import { Image } from 'astro:assets';
+
+// Profile images from assets (if available) or placeholders optimized by Astro
+import defaultProfile from '../assets/logos/logo_negro.jpg'; // fallback
+import perfil1 from '../assets/logos/perfil_insta1.jpg';
+import perfil2 from '../assets/logos/perfil_insta2.jpg';
+---
+
+<section id="equipo" class="py-24 bg-[#050505] border-b border-[#ffffff0a] relative">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4 block">Equipo Humano</span>
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
+        Tu Equipo de <span class="text-metallic font-black">Acompañamiento</span>
+      </h2>
+      <p class="text-base text-[#a3a3a3] font-light">
+        Entrenarás bajo la guía constante de profesionales titulados en Kinesiología y Ciencias del Deporte. Diseñamos tus rutinas y adaptamos cada carga según tu salud.
+      </p>
+    </div>
+
+    <!-- Coaches Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      
+      <!-- Member 1: Claudio Machuca -->
+      <div class="premium-card p-6 flex flex-col items-center text-center group reveal delay-100">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-[#ffffff15] mb-6 group-hover:border-white transition-all duration-300">
+          <Image src={perfil1} alt="Claudio Machuca" class="w-full h-full object-cover" width={130} height={130} format="webp" />
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1 uppercase">Claudio Machuca</h3>
+        <p class="text-xs font-bold text-[#737373] uppercase tracking-wider mb-3">Director & Coach</p>
+        <p class="text-xs text-[#737373] leading-relaxed">
+          Titulado en Ciencias de la Actividad Física, especialista en biomecánica clínica aplicada a la fuerza.
+        </p>
+      </div>
+
+      <!-- Member 2: Aranza Nuñez -->
+      <div class="premium-card p-6 flex flex-col items-center text-center group reveal delay-150">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-[#ffffff15] mb-6 group-hover:border-white transition-all duration-300">
+          <Image src={perfil2} alt="Aranza Nuñez" class="w-full h-full object-cover" width={130} height={130} format="webp" />
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1 uppercase">Aranza Nuñez</h3>
+        <p class="text-xs font-bold text-[#737373] uppercase tracking-wider mb-3">Coach de Fuerza</p>
+        <p class="text-xs text-[#737373] leading-relaxed">
+          Especialista en entrenamiento para la mujer, readaptación de columna y acondicionamiento general.
+        </p>
+      </div>
+
+      <!-- Member 3: Benjamín Ramírez -->
+      <div class="premium-card p-6 flex flex-col items-center text-center group reveal delay-200">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-[#ffffff15] mb-6 group-hover:border-white transition-all duration-300">
+          <!-- Fallback profile -->
+          <Image src={defaultProfile} alt="Benjamín Ramírez" class="w-full h-full object-cover filter grayscale" width={130} height={130} format="webp" />
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1 uppercase">Benjamín Ramírez</h3>
+        <p class="text-xs font-bold text-[#737373] uppercase tracking-wider mb-3">Coach de Fuerza</p>
+        <p class="text-xs text-[#737373] leading-relaxed">
+          Titulado en Educación Física, especializado en hipertrofia y dosificación de cargas para fuerza máxima.
+        </p>
+      </div>
+
+      <!-- Member 4: Javier Fuentes -->
+      <div class="premium-card p-6 flex flex-col items-center text-center group reveal delay-250">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-[#ffffff15] mb-6 group-hover:border-white transition-all duration-300">
+          <!-- Fallback profile -->
+          <Image src={defaultProfile} alt="Javier Fuentes" class="w-full h-full object-cover filter grayscale" width={130} height={130} format="webp" />
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1 uppercase">Javier Fuentes</h3>
+        <p class="text-xs font-bold text-[#737373] uppercase tracking-wider mb-3">Coach de Fuerza</p>
+        <p class="text-xs text-[#737373] leading-relaxed">
+          Kinesiólogo y readaptador físico, encargado del diseño de rutinas para rehabilitación articular.
+        </p>
+      </div>
+
+      <!-- Member 5: Elso Molina -->
+      <div class="premium-card p-6 flex flex-col items-center text-center group reveal delay-300">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-[#ffffff15] mb-6 group-hover:border-white transition-all duration-300">
+          <!-- Fallback profile -->
+          <Image src={defaultProfile} alt="Elso Molina" class="w-full h-full object-cover filter grayscale" width={130} height={130} format="webp" />
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1 uppercase">Elso Molina</h3>
+        <p class="text-xs font-bold text-[#737373] uppercase tracking-wider mb-3">Nutricionista Clínico</p>
+        <p class="text-xs text-[#737373] leading-relaxed">
+          Nutricionista titulado con postítulo en nutrición deportiva. Planificación dietética individual y bioimpedancia.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>

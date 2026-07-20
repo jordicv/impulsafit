@@ -1,0 +1,127 @@
+---
+// Sedes.astro - Physical Sede, Map button and Contact methods (Updated to single Sede Castellón)
+---
+
+<section id="sedes" class="py-24 bg-[#050505] relative border-b border-[#ffffff0a]">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4 block">Ubicación</span>
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
+        Nuestra <span class="text-metallic font-black">Sede</span>
+      </h2>
+      <p class="text-base text-[#a3a3a3] font-light">
+        Entrena en nuestro exclusivo estudio boutique ubicado en el centro de Concepción. Diseñado bajo los más altos estándares de fuerza, privacidad y comodidad.
+      </p>
+    </div>
+
+    <!-- Grid: Single Location and Contact Info (2 columns) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      
+      <!-- Sede Card: Castellón (Main Column - 7/12) -->
+      <div class="premium-card p-8 lg:col-span-7 flex flex-col justify-between min-h-[420px] reveal delay-100">
+        <div>
+          <span class="text-xs font-bold text-white tracking-widest bg-neutral-900 border border-[#ffffff0a] px-3.5 py-1.5 rounded-full mb-6 inline-block uppercase">Boutique Concepción</span>
+          <h3 class="text-3xl font-bold tracking-tight text-white mb-4 uppercase">Sede Castellón</h3>
+          <p class="text-sm text-[#737373] mb-8 font-light leading-relaxed max-w-xl">
+            Nuestra sede oficial de entrenamiento. Un espacio íntimo diseñado para la concentración absoluta, sin filas, sin aglomeraciones y con un control estricto de aforo de máximo 3 personas por coach en sala.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <div>
+                <span class="text-xs font-bold text-white uppercase block mb-1">Dirección</span>
+                <span class="text-sm text-[#e5e5e5] leading-relaxed">Castellón 176, Interior Segundo Piso, Concepción</span>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <span class="text-xs font-bold text-white uppercase block mb-1">Horarios de Atención</span>
+                <span class="text-sm text-[#e5e5e5] leading-relaxed">
+                  Lunes a Viernes: 06:00 – 21:00<br />
+                  Sábados: 09:00 – 14:00
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a 
+          href="https://maps.google.com/?q=Castellón+176,+Concepción,+Chile" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-outline w-full py-3.5 text-center text-sm rounded-full"
+        >
+          Ver Ubicación en Google Maps
+        </a>
+      </div>
+
+      <!-- Sede Card: Contact Details (Secondary Column - 5/12) -->
+      <div class="premium-card p-8 lg:col-span-5 flex flex-col justify-between min-h-[420px] bg-gradient-to-br from-[#0c0c0c] to-black reveal delay-200">
+        <div>
+          <span class="text-xs font-bold text-white tracking-widest bg-neutral-900 border border-[#ffffff0a] px-3.5 py-1.5 rounded-full mb-6 inline-block uppercase">Contacto</span>
+          <h3 class="text-3xl font-bold tracking-tight text-white mb-4 uppercase">Coordinemos</h3>
+          <p class="text-sm text-[#737373] mb-8 font-light leading-relaxed">
+            ¿Tienes dudas o te gustaría agendar tu primera sesión de evaluación inicial? Contáctanos de forma directa y te guiaremos paso a paso.
+          </p>
+          
+          <!-- Contact Options -->
+          <div class="space-y-4">
+            
+            <!-- WhatsApp -->
+            <a 
+              href="https://wa.me/56945194334?text=Hola!%20Me%20gustaría%20agendar%20una%20sesión%20de%20prueba." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex items-center gap-4 p-4 bg-neutral-900 border border-[#ffffff05] rounded-xl hover:border-[#ffffff15] transition-all"
+            >
+              <span class="p-2.5 bg-neutral-950 rounded-lg text-emerald-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" class="bi bi-whatsapp">
+                  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.977h.004c4.368 0 7.926-3.559 7.93-7.93a7.897 7.897 0 0 0-2.333-5.59zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.197-.1-.1.196-.6-.243-.197-.24-1.07-1.07-1.17-1.17-.1-.1-.19-.15-.282-.05-.09.1-.383.478-.47.577-.09.1-.18.1-.377 0-.197-.1-.83-.306-1.583-.978-.587-.524-.984-1.17-1.1-1.372-.112-.197-.01-.304.088-.403.09-.09.197-.23.296-.347.1-.1.133-.17.198-.3.065-.13.033-.242-.016-.342-.049-.1-.47-1.135-.644-1.552-.17-.41-.355-.353-.487-.359-.115-.005-.247-.005-.38-.005-.133 0-.35.05-.533.25-.183.2-.7 0-.7 1.7 0 .54.12 1.066.257 1.25.137.186 2.455 3.748 5.947 5.253.83.358 1.478.57 1.983.73.835.265 1.597.228 2.198.138.67-.1 2.062-.843 2.351-1.66.29-.817.29-1.517.203-1.662-.088-.147-.282-.244-.48-.344z"/>
+                </svg>
+              </span>
+              <div>
+                <span class="text-xs font-bold text-white block">WhatsApp Oficial</span>
+                <span class="text-xs text-[#737373] font-medium">+56 9 4519 4334</span>
+              </div>
+            </a>
+
+            <!-- Google Reviews -->
+            <a 
+              href="https://share.google/5ffrsHJu75p4V5KUi" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex items-center gap-4 p-4 bg-neutral-900 border border-[#ffffff05] rounded-xl hover:border-[#ffffff15] transition-all"
+            >
+              <span class="p-2.5 bg-neutral-950 rounded-lg text-amber-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="20" height="20" class="bi bi-star-fill">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </span>
+              <div>
+                <span class="text-xs font-bold text-white block">Reseñas en Google</span>
+                <span class="text-xs text-[#737373]">Lee la experiencia de nuestros alumnos</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="text-xs text-[#525252] text-center border-t border-[#ffffff06] pt-6 leading-normal">
+          Servicios Profesionales Fitmagnet SPA · contacto@thefitmagnet.com
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

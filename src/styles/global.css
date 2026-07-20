@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* Base Variables and Theme System */
+:root {
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  
+  /* Premium dark colors */
+  --color-black: #000000;
+  --color-dark: #0b0b0b;
+  --color-dark-gray: #1a1a1a;
+  --color-gray: #737373;
+  --color-light-gray: #e5e5e5;
+  --color-white: #ffffff;
+  
+  /* Silver-platinum gradient tokens */
+  --gradient-platinum: linear-gradient(135deg, #ffffff 0%, #d4d4d4 40%, #a3a3a3 70%, #ffffff 100%);
+  --gradient-platinum-hover: linear-gradient(135deg, #ffffff 0%, #e5e5e5 30%, #c2c2c2 70%, #d4d4d4 100%);
+  --gradient-border-platinum: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(163,163,163,0.1) 50%, rgba(255,255,255,0.3) 100%);
+  --gradient-border-platinum-glow: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(163,163,163,0.2) 50%, rgba(255,255,255,0.7) 100%);
+  --gradient-dark-card: linear-gradient(180deg, rgba(15,15,15,0.9) 0%, rgba(5,5,5,0.95) 100%);
+  --glass-background: rgba(11, 11, 11, 0.75);
+}
+
+/* Custom theme mapping for Tailwind v4 */
+@theme {
+  --font-sans: 'Barlow', sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
+}
+
+/* Reset & Styling rules */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d4d4d4;
+}
+
+/* Premium Shimmer and Metallic effects */
+.text-metallic {
+  background: var(--gradient-platinum);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-platinum {
+  background: var(--gradient-platinum);
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.95rem 2.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+}
+
+.btn-platinum:hover {
+  background: var(--gradient-platinum-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-platinum:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray);
+}
+
+/* Utility premium border card effect */
+.premium-card {
+  background: var(--gradient-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+}
+
+/* Smooth fade reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }

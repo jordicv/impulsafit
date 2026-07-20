@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Sedes from '../components/Sedes.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+
+// Claudio Machuca (Head Coach) Profile Picture
+import claudioPhoto from '../assets/logos/perfil_insta1.jpg';
+---
+
+<Layout title="Nosotros | Impulsa Fit">
+  
+  <Header />
+
+  <!-- Hero Nosotros -->
+  <section class="relative pt-36 pb-20 bg-black overflow-hidden border-b border-[#ffffff0a]">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#ffffff08] via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4 block">Equipo Humano</span>
+      <h1 class="text-4xl md:text-6xl font-black italic tracking-tight text-white mb-6 uppercase">
+        ¿Quiénes <span class="text-metallic">Somos</span>?
+      </h1>
+      <p class="text-base md:text-lg text-[#a3a3a3] font-light leading-relaxed max-w-2xl mx-auto">
+        Un equipo multidisciplinario liderado por profesionales kinesiólogos comprometidos con cambiar radicalmente la forma en la que te relacionas con el ejercicio y la fuerza.
+      </p>
+    </div>
+  </section>
+
+  <!-- Claudio Machuca / Head Coach Spotlight Section -->
+  <section class="py-24 bg-[#050505] border-b border-[#ffffff0a] relative">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        
+        <!-- Coach Image (5/12) -->
+        <div class="md:col-span-5 flex justify-center reveal">
+          <div class="relative group">
+            <!-- Glow background -->
+            <div class="absolute inset-0 bg-white/5 rounded-2xl blur-xl group-hover:bg-white/10 transition-all duration-500"></div>
+            
+            <div class="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl border border-white/15 group-hover:border-white transition-all duration-300 shadow-2xl">
+              <Image 
+                src={claudioPhoto} 
+                alt="Claudio Machuca - Director Impulsa Fit" 
+                class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-500" 
+                width={400} 
+                height={400} 
+                format="webp" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Details (7/12) -->
+        <div class="md:col-span-7 space-y-6 reveal delay-100">
+          <span class="text-xs font-bold text-white tracking-widest bg-neutral-900 border border-[#ffffff0a] px-3.5 py-1.5 rounded-full inline-block uppercase">Director & Head Coach</span>
+          <h2 class="text-3xl md:text-5xl font-black italic tracking-tight text-white uppercase">
+            Claudio <span class="text-metallic">Machuca</span>
+          </h2>
+          <p class="text-sm text-[#a3a3a3] leading-relaxed font-light">
+            Titulado en Ciencias de la Actividad Física y especialista certificado en biomecánica clínica aplicada al entrenamiento de la fuerza.
+          </p>
+          <div class="space-y-4 text-xs text-[#737373] leading-relaxed font-light">
+            <p>
+              Claudio fundó Impulsa Fit bajo la premisa de que los gimnasios tradicionales están rotos. Su enfoque se centra en crear un puente técnico entre la kinesiología de rehabilitación y el entrenamiento de fuerza de alto rendimiento.
+            </p>
+            <p>
+              "Mi misión no es solo prescribir repeticiones; es enseñar biomecánica de forma práctica para que cada alumno desarrolle una estructura física fuerte, saludable y sin limitaciones de dolor".
+            </p>
+          </div>
+          <div class="flex gap-4 pt-4">
+            <div class="border-l-2 border-white/20 pl-4">
+              <span class="text-xs font-bold text-white uppercase block mb-1">Especialidad</span>
+              <span class="text-xs text-[#737373]">Biomecánica articular de fuerza</span>
+            </div>
+            <div class="border-l-2 border-white/20 pl-4">
+              <span class="text-xs font-bold text-white uppercase block mb-1">Filosofía</span>
+              <span class="text-xs text-[#737373]">Estructura y seguridad</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sede & Contact methods -->
+  <Sedes />
+
+  <Footer />
+
+</Layout>
+
+<!-- Scroll Reveal Animation Logic -->
+<script>
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  }
+
+  initReveal();
+  document.addEventListener('astro:after-swap', initReveal);
+</script>

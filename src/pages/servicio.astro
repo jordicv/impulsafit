@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Memberships from '../components/Memberships.astro';
+import Boutique from '../components/Boutique.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="El Servicio y Membresías | Impulsa Fit">
+  
+  <Header />
+
+  <!-- Hero Section del Servicio -->
+  <section class="relative pt-36 pb-20 bg-black overflow-hidden border-b border-[#ffffff0a]">
+    <!-- Background overlay gradients -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#ffffff08] via-transparent to-transparent pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4 block">Nuestro Programa</span>
+      <h1 class="text-4xl md:text-6xl font-black italic tracking-tight text-white mb-6 uppercase">
+        Acompañamiento <span class="text-metallic">Total</span>
+      </h1>
+      <p class="text-base md:text-lg text-[#a3a3a3] font-light leading-relaxed max-w-2xl mx-auto">
+        Kinesiología de fuerza aplicada y kinesiología deportiva. Diseñamos un sistema personalizado donde nunca vuelves a entrenar solo, con un control de aforo absoluto y apoyo profesional continuo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detailed Service Description (El Servicio en Detalle) -->
+  <section id="detalles-servicio" class="py-24 bg-[#050505] border-b border-[#ffffff0a]">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Image/Intro column (5/12) -->
+        <div class="lg:col-span-5 reveal">
+          <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-3 block">Metodología de Fuerza</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6 uppercase">
+            ¿En qué consiste el <span class="text-metallic">Acompañamiento</span>?
+          </h2>
+          <p class="text-sm text-[#737373] leading-relaxed mb-6 font-light">
+            En los gimnasios comerciales te entregan una rutina genérica en papel y te dejan solo. En Impulsa Fit, tu coach (profesional kinesiólogo) está contigo en cada serie, ajustando las cargas de trabajo, corrigiendo posturas y adaptando los movimientos a tu salud articular.
+          </p>
+          <div class="p-4 bg-neutral-900 border border-[#ffffff05] rounded-xl text-xs text-[#a3a3a3] font-light leading-relaxed">
+            <strong class="text-white font-bold block mb-1">Evaluación Inicial de Entrada:</strong>
+            Antes de levantar tu primer peso, realizamos una evaluación kinesiológica completa para detectar desbalances, evaluar rangos de movimiento y fijar el punto de partida seguro.
+          </div>
+        </div>
+
+        <!-- Three pillars detailed (7/12) -->
+        <div class="lg:col-span-7 space-y-6 reveal delay-100">
+          
+          <!-- Pillar 1 -->
+          <div class="premium-card p-6 flex gap-4">
+            <span class="flex-shrink-0 w-10 h-10 bg-neutral-900 border border-[#ffffff10] rounded-lg flex items-center justify-center font-bold text-white text-sm">01</span>
+            <div>
+              <h3 class="text-lg font-bold text-white uppercase mb-2">Entrenamiento Dirigido</h3>
+              <p class="text-xs text-[#a3a3a3] leading-relaxed font-light">
+                Sesiones estructuradas de kinesiología de fuerza con un aforo limitado de máximo 3 personas por coach en sala. Tienes la atención y guía que necesitas sin el costo de un entrenador 1-a-1 tradicional.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="premium-card p-6 flex gap-4">
+            <span class="flex-shrink-0 w-10 h-10 bg-neutral-900 border border-[#ffffff10] rounded-lg flex items-center justify-center font-bold text-white text-sm">02</span>
+            <div>
+              <h3 class="text-lg font-bold text-white uppercase mb-2">Asesoría Nutricional Continua</h3>
+              <p class="text-xs text-[#a3a3a3] leading-relaxed font-light">
+                Tu membresía incluye el acompañamiento de nuestra nutricionista deportiva para estructurar tus pautas de alimentación de forma realista, complementando el estímulo del entrenamiento.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="premium-card p-6 flex gap-4">
+            <span class="flex-shrink-0 w-10 h-10 bg-neutral-900 border border-[#ffffff10] rounded-lg flex items-center justify-center font-bold text-white text-sm">03</span>
+            <div>
+              <h3 class="text-lg font-bold text-white uppercase mb-2">Masoterapia y Recuperación</h3>
+              <p class="text-xs text-[#a3a3a3] leading-relaxed font-light">
+                Las opciones de membresía PLUS incorporan sesiones mensuales de masoterapia y descarga muscular en nuestro box clínico privado, acelerando la recuperación y previniendo sobrecargas.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Membresías (Selector interactivo y redirecciones) -->
+  <div id="membresias">
+    <Memberships />
+  </div>
+
+  <!-- Experiencia Boutique Detallada y Galería -->
+  <Boutique />
+
+  <!-- Preguntas Frecuentes (FAQ) -->
+  <FAQ />
+
+  <Footer />
+
+</Layout>
+
+<!-- Scroll Reveal Animation Logic -->
+<script>
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  }
+
+  initReveal();
+  document.addEventListener('astro:after-swap', initReveal);
+</script>

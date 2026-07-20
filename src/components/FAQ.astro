@@ -1,0 +1,129 @@
+---
+// FAQ.astro - Accordion Questions & Answers
+---
+
+<section class="py-24 bg-black border-b border-[#ffffff0a] relative select-none">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
+        Preguntas <span class="text-metallic font-black">Frecuentes</span>
+      </h2>
+      <p class="text-sm md:text-base text-[#a3a3a3] font-light">
+        Todo lo que necesitas saber antes de dar tu primer paso en Impulsa Fit.
+      </p>
+    </div>
+
+    <!-- Accordion Items -->
+    <div class="space-y-4 reveal delay-100">
+      
+      <!-- Q1 -->
+      <div class="border border-[#ffffff0a] rounded-lg bg-[#050505] overflow-hidden accordion-item">
+        <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none transition-colors duration-200 hover:bg-[#0b0b0b]">
+          <span class="text-base md:text-lg font-bold text-white uppercase tracking-wide">¿Un coach está conmigo durante toda la sesión?</span>
+          <span class="text-xl text-[#737373] transform transition-transform duration-300 pointer-events-none accordion-icon">+</span>
+        </button>
+        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
+          <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
+            Sí, totalmente. Durante tu sesión de 60 minutos tendrás un coach presente en sala guiándote, indicando la ejecución técnica de cada ejercicio, corrigiendo tu postura y ajustando la dosificación de tus cargas en tiempo real. La atención es personalizada, operando en grupos pequeños de máximo 3 personas por coach en sala.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="border border-[#ffffff0a] rounded-lg bg-[#050505] overflow-hidden accordion-item">
+        <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none transition-colors duration-200 hover:bg-[#0b0b0b]">
+          <span class="text-base md:text-lg font-bold text-white uppercase tracking-wide">¿Tengo que reservar un horario fijo o hay flexibilidad?</span>
+          <span class="text-xl text-[#737373] transform transition-transform duration-300 pointer-events-none accordion-icon">+</span>
+        </button>
+        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
+          <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
+            Contamos con flexibilidad total a través de la App de Fiti. Puedes agendar y modificar tus horarios según tu disponibilidad semanal. A diferencia de las sesiones grupales rígidas o de entrenadores personales fijos, si tus planes cambian puedes reagendar tu sesión de forma autónoma sin perderla, siempre respetando la capacidad controlada de la sala.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="border border-[#ffffff0a] rounded-lg bg-[#050505] overflow-hidden accordion-item">
+        <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none transition-colors duration-200 hover:bg-[#0b0b0b]">
+          <span class="text-base md:text-lg font-bold text-white uppercase tracking-wide">¿Necesito experiencia previa en levantamiento de pesas?</span>
+          <span class="text-xl text-[#737373] transform transition-transform duration-300 pointer-events-none accordion-icon">+</span>
+        </button>
+        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
+          <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
+            No, en absoluto. Impulsa Fit está diseñado especialmente para personas que buscan aprender a entrenar fuerza de forma correcta y segura, guiados por expertos. Te enseñamos los patrones básicos de movimiento desde cero, adaptando las cargas a tu nivel real de fuerza física, flexibilidad y condición aeróbica.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="border border-[#ffffff0a] rounded-lg bg-[#050505] overflow-hidden accordion-item">
+        <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none transition-colors duration-200 hover:bg-[#0b0b0b]">
+          <span class="text-base md:text-lg font-bold text-white uppercase tracking-wide">Tengo una hernia o lesión lumbar, ¿puedo entrenar aquí?</span>
+          <span class="text-xl text-[#737373] transform transition-transform duration-300 pointer-events-none accordion-icon">+</span>
+        </button>
+        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
+          <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
+            Sí. Nuestro equipo incluye kinesiólogos titulados y especialistas en biomecánica clínica. En la evaluación inicial registramos tus dolores y lesiones para estructurar una rutina con ejercicios seguros que protejan tu espalda, rodillas y hombros, enfocándonos en fortalecer los músculos de soporte para reducir tu dolor crónico.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="border border-[#ffffff0a] rounded-lg bg-[#050505] overflow-hidden accordion-item">
+        <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none transition-colors duration-200 hover:bg-[#0b0b0b]">
+          <span class="text-base md:text-lg font-bold text-white uppercase tracking-wide">¿Qué incluye el servicio nutricional mensual?</span>
+          <span class="text-xl text-[#737373] transform transition-transform duration-300 pointer-events-none accordion-icon">+</span>
+        </button>
+        <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
+          <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
+            Incluye una consulta con nuestro nutricionista clínico (Elso Molina), una evaluación corporal mediante bioimpedancia (InBody) que detalla tu masa muscular y grasa por segmentos corporales, y la entrega de una pauta alimenticia personalizada adaptada a tus objetivos físicos y de salud actuales.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Accordion Interaction Script -->
+<script>
+  function initFAQ() {
+    const items = document.querySelectorAll('.accordion-item');
+    if (items.length === 0) return;
+
+    items.forEach(item => {
+      const button = item.querySelector('button');
+      const content = item.querySelector('div');
+      const icon = item.querySelector('.accordion-icon') as HTMLElement;
+
+      button?.addEventListener('click', () => {
+        const isOpen = content?.style.maxHeight && content.style.maxHeight !== '0px';
+
+        // Close all other accordions first
+        items.forEach(otherItem => {
+          const otherContent = otherItem.querySelector('div');
+          const otherIcon = otherItem.querySelector('.accordion-icon') as HTMLElement;
+          if (otherContent) otherContent.style.maxHeight = '0px';
+          if (otherIcon) {
+            otherIcon.style.transform = 'none';
+            otherIcon.style.color = '#737373';
+          }
+        });
+
+        // Toggle current accordion
+        if (!isOpen && content && icon) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.style.transform = 'rotate(45deg)';
+          icon.style.color = '#ffffff';
+        }
+      });
+    });
+  }
+
+  // Bind to initial load and page changes
+  initFAQ();
+  document.addEventListener('astro:page-load', initFAQ);
+</script>

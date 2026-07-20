@@ -1,0 +1,141 @@
+---
+// Header.astro - Premium Floating Glassmorphism Navigation Menu (Strictly Page-Based Routes)
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/' || pathname === '/index.html';
+const isServicio = pathname.startsWith('/servicio');
+const isNosotros = pathname.startsWith('/nosotros');
+const isContacto = pathname.startsWith('/contacto');
+---
+
+<div class="fixed top-0 left-0 w-full z-50 px-4 md:px-6 pt-4 transition-all duration-300" id="header-wrapper">
+  <header class="mx-auto max-w-5xl w-full bg-black/65 backdrop-blur-xl border border-white/8 rounded-full py-3 px-6 md:px-8 flex items-center justify-between transition-all duration-300 shadow-2xl shadow-black/80" id="main-header">
+    
+    <!-- Enlarged Logo SVG -->
+    <a href="/" class="flex items-center justify-center h-10 w-auto group" aria-label="Impulsa Fit Home">
+      <svg id="impulsa-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2097.61 1122.11" class="h-9 md:h-11 w-auto fill-white transition-all duration-300 group-hover:opacity-90 group-hover:scale-[1.02]">
+        <style>
+          .cls-logo-fill { fill: #ffffff; }
+        </style>
+        <polygon class="cls-logo-fill" points="66.67 775.53 0 775.53 44.17 502.76 114.74 502.76 66.67 775.53"/>
+        <polygon class="cls-logo-fill" points="383.92 775.53 321.87 775.53 353.1 598.27 262.38 775.53 224.46 775.53 198.06 598.27 165.35 775.53 105.12 775.53 150.31 502.76 245.28 502.76 261.27 662.96 329.67 502.76 430.06 502.76 383.92 775.53"/>
+        <path class="cls-logo-fill" d="M1441.96,775.53h69.44l-16.85-272.76h-94.48l-110.56,272.76h67.4l20.46-53.02h63.35l1.24,53.02ZM1396.11,673.92l40.98-106.22,2.49,106.22h-43.47Z"/>
+        <polygon class="cls-logo-fill" points="1086.57 851.08 1039.88 1122.11 1108.71 1122.11 1152.13 851.08 1086.57 851.08"/>
+        <polygon class="cls-logo-fill" points="1186.36 851.08 1177.61 905.73 1239.32 905.73 1202.04 1122.11 1270.87 1122.11 1305.54 905.73 1370.2 905.73 1376.61 851.08 1186.36 851.08"/>
+        <path class="cls-logo-fill" d="M1214.53,435.7l41.44,37.6-149.06,36.91-24.88,70.82,92.71,78.86-75.52-21.83-38.88,98.09,2.86-13.33h-84.77l39.68-220.05h-68.92l-45.18,272.76h140.73l-29.95,75.56h-123.91l-46.29,271.03h71.38l18.54-107.63h79.05l8.07-50.36h-78.44l10.06-58.39h91.08l6.9-43.05,104.34-120.58,126.22,35.81,25.4-127.69-79.72-77.03,88.1-33.91,26.5,36.43,87.18-151.17-214.71,11.15ZM1340.09,538.65l-17.31-23.8-132.17,50.86,94.58,91.39-18.97,95.38-117.52-33.34-110.46,127.65,73.01-184.21,148.24,42.86-153.78-130.82,16.66-47.41,175.28-43.4-33.54-30.44,129.03-6.7-53.04,91.97Z"/>
+        <path class="cls-logo-fill" d="M597.33,502.76h-131.71l-47.11,272.76h70.18l14.59-85.05h58.37c32.72,0,82.54-5.2,95.55-84.02,13.01-78.82-19.7-103.69-59.88-103.69ZM554.24,636.76h-43.21l13.31-82.71h43.8c34.96,0,29.19,82.71-13.9,82.71Z"/>
+        <path class="cls-logo-fill" d="M1720.74,29.56l355.19,920.42h21.68L1737.38,16.51c-1.37-3.54-4.6-6.02-8.38-6.41L1633.08.06c-2.96-.31-5.88.69-8.03,2.73l-117.7,112.09h-130.74c-2.28,0-4.5.77-6.29,2.2l-485.25,385.68h-41.6s-19.3,129.49-30.08,189.48c-9.7,54-82.94,40.62-76.25,4.8,7.06-50.19,33.09-194.28,33.09-194.28h-64.27s-25.63,142.18-34.63,192.54c-7.44,41.64,10.04,85.07,87.37,86.59,62.83,0,109.49-20.6,120.64-83.8,9.83-55.7,28.53-166.93,32.54-190.76l191.68-152.38c4.34,1.19,10.74,2.4,18.92,2.4,11.84,0,27.35-2.54,45.51-11.35,12.39-6.01,24.97-13.55,37.13-20.85,24.15-14.48,49.11-29.45,68.79-29.45.22,0,.55.03.65,0,23.19,0,41.25,13,58.71,25.58,16.43,11.83,33.42,24.06,53.87,24.06.25,0,.51,0,.77,0,26.77-.4,54.33-.22,74.46-.1,7.97.05,14.86.1,20.2.1,25.99,0,42.46-17.4,48.97-51.72,4.7-24.77,10.17-31.01,13.01-32.52.68-.36,2.74-1.46,8.21.89,22.03,9.44,42.31,13.87,69.64,4.76,27-9,43.03-16.93,38.04-51.2-1.74-11.95-5.36-41.49-8.72-72.72l.61-.63-.76-.74c-3.62-33.75-6.91-69.19-7.2-86.35-.26-15.73-.09-26.58.15-33.53l76.23,7.98ZM1159.17,327.82c-13.29,6.45-24.45,8.76-33.1,9.26l28.95-23.02,9.3,11.11c-1.72.89-3.46,1.82-5.16,2.64ZM1194.72,307.82c-4.1,2.46-8.24,4.92-12.39,7.36l-11.47-13.7,19.62-15.59,13.66,16.32c-3.15,1.86-6.29,3.74-9.42,5.62ZM1624.06,31.66c-.07,5.91-.07,13.14.06,21.87l-11.73-10.76,11.67-11.11ZM1597.72,56.75l27.94,25.63c.86,11.16,2.03,23.94,3.34,37.17l-48.15-46.74,16.87-16.07ZM1566.19,86.77l66.08,64.14c1.19,10.93,2.4,21.53,3.53,31.1l-84-81.53,14.39-13.71ZM1222.02,292.06l-15.71-18.77,15.14-12.04,18.54,22.15c-5.96,2.49-11.96,5.45-17.97,8.66ZM1274.74,275.49h-.01c-.32,0-.64,0-.97,0-4.24,0-8.54.5-12.9,1.35l-23.58-28.18,20.49-16.29,38.48,45.99c-6.71-1.8-13.84-2.87-21.51-2.87ZM1387.61,325.12c-.16,0-.31,0-.46,0-13.94,0-26.98-9.39-42.06-20.25-.23-.17-.47-.34-.71-.51l-70.78-84.58,23.42-18.62,103.6,123.8c-4.33.04-8.69.09-13.02.15ZM1462.51,325.03c-10.29-.07-22.51-.14-35.58-.15l-114.06-136.29,27.09-21.53,135.64,158.05c-3.92-.02-8.27-.04-13.09-.07ZM1497.95,320.1l-142.16-165.64,20.06-15.94,135.62,152.29c-3.16,16.01-8.02,24.68-13.52,29.29ZM1535.05,243.26c-7.53,4.01-13.14,11.54-17.54,23.93l-117.63-132.08h40.28l95.9,107.69c-.34.16-.68.29-1.02.46ZM1565.41,245.33l-98.16-110.23h32.16l106.82,115.08c-14.87,3.01-27.04.59-40.82-4.85ZM1627.58,243.47l-106-114.2,15.57-14.83,102.67,99.65c.22,1.62.43,3.13.61,4.38,2.23,15.31.72,19.61-12.85,25Z"/>
+      </svg>
+    </a>
+
+    <!-- Desktop Navigation Links (Strictly Page-Based Routes) -->
+    <nav class="hidden lg:flex items-center gap-1.5 bg-white/5 border border-white/5 p-1 rounded-full">
+      <a href="/" class={`text-[10px] font-bold tracking-widest px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/5 ${isHome ? 'text-white bg-white/10' : 'text-[#a3a3a3] hover:text-white'}`}>
+        INICIO
+      </a>
+      <a href="/servicio" class={`text-[10px] font-bold tracking-widest px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/5 ${isServicio ? 'text-white bg-white/10' : 'text-[#a3a3a3] hover:text-white'}`}>
+        SERVICIO
+      </a>
+      <a href="/nosotros" class={`text-[10px] font-bold tracking-widest px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/5 ${isNosotros ? 'text-white bg-white/10' : 'text-[#a3a3a3] hover:text-white'}`}>
+        NOSOTROS
+      </a>
+      <a href="/contacto" class={`text-[10px] font-bold tracking-widest px-4 py-1.5 rounded-full transition-all duration-300 hover:bg-white/5 ${isContacto ? 'text-white bg-white/10' : 'text-[#a3a3a3] hover:text-white'}`}>
+        CONTACTO
+      </a>
+    </nav>
+
+    <!-- Desktop CTA Buttons -->
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="https://es.fiti.app/impulsafit/1/page/landing-page/login" target="_blank" rel="noopener noreferrer" class="text-[10px] font-bold tracking-widest text-[#d4d4d4] hover:text-white border border-white/10 rounded-full px-4 py-1.5 transition-all duration-300 hover:bg-white/5 hover:border-white/30">
+        INICIAR SESIÓN
+      </a>
+      <a href="https://es.fiti.app/impulsafit/1/page/landing-page/agenda" target="_blank" rel="noopener noreferrer" class="btn-platinum py-1.5 px-4 text-[10px] tracking-wider rounded-full shadow-md shadow-white/5 hover:scale-[1.02]">
+        AGENDA TU SESIÓN
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="lg:hidden flex flex-col gap-1.5 justify-center items-center w-8 h-8 focus:outline-none border border-white/10 rounded-full" id="menu-btn" aria-label="Toggle menu">
+      <span class="w-4 h-0.5 bg-white transition-all duration-300 bar1"></span>
+      <span class="w-4 h-0.5 bg-white transition-all duration-300 bar2"></span>
+      <span class="w-4 h-0.5 bg-white transition-all duration-300 bar3"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="hidden lg:hidden w-full bg-black/90 backdrop-blur-2xl border border-white/10 rounded-3xl flex-col items-center py-8 gap-5 mt-3 shadow-2xl transition-all duration-300 opacity-0 transform -translate-y-4" id="mobile-menu">
+    <a href="/" class="text-sm font-bold tracking-widest text-[#a3a3a3] hover:text-white transition-colors">INICIO</a>
+    <a href="/servicio" class="text-sm font-bold tracking-widest text-[#a3a3a3] hover:text-white transition-colors">SERVICIO</a>
+    <a href="/nosotros" class="text-sm font-bold tracking-widest text-[#a3a3a3] hover:text-white transition-colors">NOSOTROS</a>
+    <a href="/contacto" class="text-sm font-bold tracking-widest text-[#a3a3a3] hover:text-white transition-colors">CONTACTO</a>
+    <hr class="w-[80%] border-white/10" />
+    <a href="https://es.fiti.app/impulsafit/1/page/landing-page/login" target="_blank" rel="noopener noreferrer" class="text-xs font-bold tracking-widest text-[#a3a3a3] hover:text-white transition-colors border border-white/10 rounded-full px-5 py-2">INICIAR SESIÓN</a>
+    <a href="https://es.fiti.app/impulsafit/1/page/landing-page/agenda" target="_blank" rel="noopener noreferrer" class="btn-platinum py-2 px-5 text-xs w-[80%] text-center rounded-full">
+      AGENDA TU SESIÓN
+    </a>
+  </div>
+</div>
+
+<script>
+  function initHeader() {
+    const headerWrapper = document.getElementById('header-wrapper');
+    const header = document.getElementById('main-header');
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        headerWrapper?.classList.remove('pt-4');
+        headerWrapper?.classList.add('pt-2');
+        header?.classList.remove('bg-black/65');
+        header?.classList.add('bg-black/85', 'py-2');
+      } else {
+        headerWrapper?.classList.remove('pt-2');
+        headerWrapper?.classList.add('pt-4');
+        header?.classList.remove('bg-black/85', 'py-2');
+        header?.classList.add('bg-black/65');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    menuBtn?.addEventListener('click', () => {
+      const isExpanded = menuBtn.classList.toggle('active');
+      const bar1 = menuBtn.querySelector('.bar1') as HTMLElement;
+      const bar2 = menuBtn.querySelector('.bar2') as HTMLElement;
+      const bar3 = menuBtn.querySelector('.bar3') as HTMLElement;
+      
+      if (isExpanded) {
+        bar1.style.transform = 'translateY(5px) rotate(45deg)';
+        bar2.style.opacity = '0';
+        bar3.style.transform = 'translateY(-5px) rotate(-45deg)';
+        
+        mobileMenu?.classList.remove('hidden');
+        setTimeout(() => {
+          mobileMenu?.classList.add('opacity-100', 'translate-y-0');
+          mobileMenu?.classList.remove('opacity-0', '-translate-y-4');
+        }, 50);
+      } else {
+        bar1.style.transform = 'none';
+        bar2.style.opacity = '1';
+        bar3.style.transform = 'none';
+        
+        mobileMenu?.classList.add('opacity-0', '-translate-y-4');
+        mobileMenu?.classList.remove('opacity-100', 'translate-y-0');
+        setTimeout(() => {
+          mobileMenu?.classList.add('hidden');
+        }, 300);
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn?.click();
+      });
+    });
+  }
+
+  initHeader();
+  document.addEventListener('astro:after-swap', initHeader);
+</script>

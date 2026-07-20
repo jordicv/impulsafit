@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contacto | Impulsa Fit">
+  
+  <Header />
+
+  <!-- Hero Contacto -->
+  <section class="relative pt-36 pb-20 bg-black overflow-hidden border-b border-[#ffffff0a]">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#ffffff08] via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4 block">Coordinemos</span>
+      <h1 class="text-4xl md:text-6xl font-black italic tracking-tight text-white mb-6 uppercase">
+        Canales de <span class="text-metallic">Contacto</span>
+      </h1>
+      <p class="text-base md:text-lg text-[#a3a3a3] font-light leading-relaxed max-w-2xl mx-auto">
+        ¿Tienes dudas o estás listo para agendar tu primera sesión? Elige tu método preferido de contacto. Te enrutaremos de inmediato sin intermediarios.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Options (Clean, formless, direct CTAs) -->
+  <section class="py-24 bg-[#050505] border-b border-[#ffffff0a]">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch reveal">
+        
+        <!-- Option 1: WhatsApp (Personalized advice) -->
+        <div class="premium-card p-10 flex flex-col justify-between items-start bg-gradient-to-br from-[#0c0c0c] to-black min-h-[300px]">
+          <div class="w-full">
+            <span class="p-3 bg-neutral-900 border border-[#ffffff10] rounded-xl text-emerald-500 mb-6 inline-block">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16" class="bi bi-whatsapp">
+                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.977h.004c4.368 0 7.926-3.559 7.93-7.93a7.897 7.897 0 0 0-2.333-5.59zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.197-.1-.1.196-.6-.243-.197-.24-1.07-1.07-1.17-1.17-.1-.1-.19-.15-.282-.05-.09.1-.383.478-.47.577-.09.1-.18.1-.377 0-.197-.1-.83-.306-1.583-.978-.587-.524-.984-1.17-1.1-1.372-.112-.197-.01-.304.088-.403.09-.09.197-.23.296-.347.1-.1.133-.17.198-.3.065-.13.033-.242-.016-.342-.049-.1-.47-1.135-.644-1.552-.17-.41-.355-.353-.487-.359-.115-.005-.247-.005-.38-.005-.133 0-.35.05-.533.25-.183.2-.7 0-.7 1.7 0 .54.12 1.066.257 1.25.137.186 2.455 3.748 5.947 5.253.83.358 1.478.57 1.983.73.835.265 1.597.228 2.198.138.67-.1 2.062-.843 2.351-1.66.29-.817.29-1.517.203-1.662-.088-.147-.282-.244-.48-.344z"/>
+              </svg>
+            </span>
+            <h2 class="text-2xl font-bold text-white uppercase mb-3">WhatsApp de Soporte</h2>
+            <p class="text-xs text-[#737373] leading-relaxed mb-6 font-light">
+              Escríbenos directamente para resolver cualquier duda sobre los planes, facturación, agendamiento de masoterapia o para coordinar de forma guiada tu primera sesión.
+            </p>
+          </div>
+          <a 
+            href="https://wa.me/56945194334?text=Hola!%20Me%20gustaría%20agendar%20una%20sesión%20de%20prueba." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-platinum text-xs py-3.5 w-full text-center rounded-full"
+          >
+            Escríbenos en WhatsApp
+          </a>
+        </div>
+
+        <!-- Option 2: Fiti App (Direct Scheduling & Payments) -->
+        <div class="premium-card p-10 flex flex-col justify-between items-start bg-gradient-to-br from-[#0c0c0c] to-black min-h-[300px]">
+          <div class="w-full">
+            <span class="p-3 bg-neutral-900 border border-[#ffffff10] rounded-xl text-white mb-6 inline-block">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+            </span>
+            <h2 class="text-2xl font-bold text-white uppercase mb-3">Reservar en Agenda</h2>
+            <p class="text-xs text-[#737373] leading-relaxed mb-6 font-light">
+              Accede de forma directa a nuestro portal de reservas en Fiti App para revisar los bloques horarios disponibles, adquirir cupones de prueba o pagar tu membresía de forma 100% segura.
+            </p>
+          </div>
+          <a 
+            href="https://es.fiti.app/impulsafit/1/page/landing-page/agenda" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-outline text-xs py-3.5 w-full text-center rounded-full hover:border-white hover:bg-white/5"
+          >
+            Abrir Agenda Fiti
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Sede Address Info Summary -->
+      <div class="mt-12 p-8 bg-neutral-950 border border-[#ffffff05] rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 reveal delay-100">
+        <div>
+          <span class="text-xs font-bold text-[#737373] uppercase tracking-wider block mb-1">Ubicación Física</span>
+          <span class="text-sm text-white font-medium">Castellón 176, Interior Segundo Piso, Concepción</span>
+        </div>
+        <a 
+          href="https://maps.google.com/?q=Castellón+176,+Concepción,+Chile" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-xs font-bold tracking-widest text-[#a3a3a3] hover:text-white transition-colors duration-200 uppercase border-b border-white/20 pb-0.5 hover:border-white"
+        >
+          Cómo llegar en Maps &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+
+</Layout>
+
+<!-- Scroll Reveal Animation Logic -->
+<script>
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  }
+
+  initReveal();
+  document.addEventListener('astro:after-swap', initReveal);
+</script>

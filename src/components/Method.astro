@@ -1,0 +1,276 @@
+---
+// Method.astro - Core methodology, pain points, service phases, and comparison table
+---
+
+<!-- SECTION 1: EL DOLOR -->
+<section class="py-24 bg-black border-b border-[#ffffff0a] relative overflow-hidden" id="metodo">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Image/Visual Column (Using real photo optimized by Astro or simple structured outline) -->
+      <div class="lg:col-span-5 reveal">
+        <div class="premium-card p-2 border-[#ffffff15] rounded-xl overflow-hidden aspect-[4/5] relative group">
+          <!-- Real Gym Photo (e.g. IMG_8016 showing training environment) -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 pointer-events-none"></div>
+          <img 
+            src="/src/assets/images/IMG_8016.JPG" 
+            alt="Entrenamiento en Sede Impulsa Fit" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute bottom-6 left-6 right-6 z-20">
+            <span class="text-xs font-bold tracking-widest text-[#a3a3a3] uppercase block mb-1">Tu espacio de entrenamiento</span>
+            <p class="text-sm text-white font-medium">Sin aglomeraciones. Máximo 3 alumnos por coach en sala.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Content Column -->
+      <div class="lg:col-span-7 flex flex-col justify-center reveal delay-100">
+        <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4">El Problema</span>
+        <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-6 uppercase">
+          ¿Por qué te cuesta tanto <span class="text-metallic font-black">ser constante</span>?
+        </h2>
+        <div class="space-y-6 text-[#d4d4d4] font-light leading-relaxed">
+          <p>
+            El gimnasio tradicional está diseñado bajo un modelo de volumen: te venden el acceso anual barato, apuestan a que dejes de ir en el segundo mes y te dejan improvisando tu rutina en una sala repleta, esperando máquinas y sin saber si estás haciendo los ejercicios de forma correcta.
+          </p>
+          <p>
+            Si no has sido constante en el pasado, <strong>no es por falta de voluntad</strong>. Es porque te falta un sistema que te entregue estructura, que te guíe en cada repetición y que no te deje entrenando solo.
+          </p>
+        </div>
+        
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 bg-[#0b0b0b] border border-[#ffffff05] rounded">
+            <span class="text-sm font-bold text-white block mb-1">Gimnasios Tradicionales</span>
+            <p class="text-xs text-[#737373]">Salas colapsadas, rutinas genéricas en papel y abandono absoluto desde el primer día.</p>
+          </div>
+          <div class="p-4 bg-[#0b0b0b] border border-[#ffffff05] rounded">
+            <span class="text-sm font-bold text-white block mb-1">Entrenamiento Boutique</span>
+            <p class="text-xs text-[#737373]">Coaches dedicados en sala, planificación clínica adaptada a tus lesiones y agenda flexible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: MÉTODO IMPULSA (7 FASES) -->
+<section class="py-24 bg-[#050505] border-b border-[#ffffff0a] relative">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4 block">Estructura Científica</span>
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
+        El Método <span class="text-metallic font-black">I·M·P·U·L·S·A</span>
+      </h2>
+      <p class="text-base text-[#a3a3a3] font-light">
+        No creemos en la improvisación. Nuestro método estructurado de 7 fases está diseñado para transformar el ejercicio en un hábito del que no quieras escapar.
+      </p>
+    </div>
+
+    <!-- Interactive Siglas / Phases Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-7 gap-4 items-stretch select-none">
+      
+      <!-- I -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-100">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">I</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Identificación</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">Evaluación clínica inicial, historial de lesiones y objetivos de salud reales.</p>
+      </div>
+
+      <!-- M -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-150">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">M</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Movimiento</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">Corrección técnica precisa y patrones de fuerza seguros antes de cargar peso.</p>
+      </div>
+
+      <!-- P -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-200">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">P</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Progresión</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">Incrementos dosificados y registro estricto en app para ver avances reales.</p>
+      </div>
+
+      <!-- U -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-250">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">U</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Unicidad</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">Rutinas 100% individuales adaptadas a tu nivel, sin importar quién entrena a tu lado.</p>
+      </div>
+
+      <!-- L -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-300">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">L</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Logro</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">Fijación de metas a corto plazo para mantener la motivación alta y constante.</p>
+      </div>
+
+      <!-- S -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-350">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">S</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Seguimiento</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">Nutrición mensual y comunicación activa por WhatsApp para asegurar el foco.</p>
+      </div>
+
+      <!-- A -->
+      <div class="p-6 bg-black border border-[#ffffff05] hover:border-[#ffffff1a] transition-all duration-300 rounded group flex flex-col justify-between min-h-[220px] reveal delay-400">
+        <div>
+          <span class="text-4xl font-black italic text-metallic group-hover:scale-110 transition-transform block mb-4">A</span>
+          <h3 class="text-sm font-bold text-white mb-2 uppercase">Adherencia</h3>
+        </div>
+        <p class="text-xs text-[#737373] leading-relaxed">La fase definitiva: cuando entrenar se vuelve parte natural y disfrutable de tu vida.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: EL SERVICIO (LAS 4 FASES DEL CLIENTE) -->
+<section class="py-24 bg-black border-b border-[#ffffff0a] relative" id="servicio">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Title & Concept Column -->
+      <div class="lg:col-span-5 flex flex-col justify-center reveal">
+        <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-4">El Acompañamiento</span>
+        <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-6 uppercase">
+          La Experiencia <span class="text-metallic font-black">Paso a Paso</span>
+        </h2>
+        <p class="text-[#d4d4d4] font-light leading-relaxed mb-6">
+          Desde tu primer día, te integramos en un ecosistema diseñado para cuidarte. Hacemos que la adaptación sea fluida y que cada sesión esté estructurada bajo supervisión experta.
+        </p>
+        <p class="text-sm text-[#737373]">
+          * Todas las membresías incluyen este flujo de acompañamiento sin costos adicionales.
+        </p>
+      </div>
+
+      <!-- Steps / Accordion Column -->
+      <div class="lg:col-span-7 reveal delay-100">
+        <div class="space-y-4">
+          
+          <!-- Phase 1 -->
+          <div class="p-6 bg-[#0b0b0b] border border-[#ffffff05] rounded-lg">
+            <div class="flex items-center gap-4 mb-3">
+              <span class="w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-bold font-heading text-[#a3a3a3]">01</span>
+              <h3 class="text-lg font-bold text-white uppercase tracking-wider">Onboarding / Evaluación Inicial</h3>
+            </div>
+            <p class="text-sm text-[#737373] font-light leading-relaxed pl-12">
+              Tu primera sesión es una evaluación clínica. Analizamos tu postura, historial médico, lesiones pasadas y rango de movimiento para estructurar tu planificación inicial de forma segura.
+            </p>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="p-6 bg-[#0b0b0b] border border-[#ffffff05] rounded-lg">
+            <div class="flex items-center gap-4 mb-3">
+              <span class="w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-bold font-heading text-[#a3a3a3]">02</span>
+              <h3 class="text-lg font-bold text-white uppercase tracking-wider">Acompañamiento Activo en Sala</h3>
+            </div>
+            <p class="text-sm text-[#737373] font-light leading-relaxed pl-12">
+              En cada sesión, entrenas con un coach dedicado. Con un ratio estricto de máximo 3 personas por coach en sala, vigilamos tu postura, corregimos tu técnica y ajustamos las cargas en tiempo real.
+            </p>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="p-6 bg-[#0b0b0b] border border-[#ffffff05] rounded-lg">
+            <div class="flex items-center gap-4 mb-3">
+              <span class="w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-bold font-heading text-[#a3a3a3]">03</span>
+              <h3 class="text-lg font-bold text-white uppercase tracking-wider">Seguimiento Semanal Continuo</h3>
+            </div>
+            <p class="text-sm text-[#737373] font-light leading-relaxed pl-12">
+              Te guiamos más allá del gimnasio. A través de la app FITI y soporte directo vía WhatsApp, resolvemos tus dudas, coordinamos tus horarios y ajustamos tus hábitos diarios de forma flexible.
+            </p>
+          </div>
+
+          <!-- Phase 4 -->
+          <div class="p-6 bg-[#0b0b0b] border border-[#ffffff05] rounded-lg">
+            <div class="flex items-center gap-4 mb-3">
+              <span class="w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-bold font-heading text-[#a3a3a3]">04</span>
+              <h3 class="text-lg font-bold text-white uppercase tracking-wider">Medición e Incremento de Progreso</h3>
+            </div>
+            <p class="text-sm text-[#737373] font-light leading-relaxed pl-12">
+              Cada 6 a 9 semanas realizamos una re-evaluación antropométrica y física. Medimos tu ganancia de fuerza, variación de masa muscular y ajustamos tu rutina para seguir escalando tus metas de salud.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: COMPARISON TABLE (DIFERENCIADORES) -->
+<section class="py-24 bg-[#050505] border-b border-[#ffffff0a] relative">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
+        La Diferencia <span class="text-metallic font-black">Real</span>
+      </h2>
+      <p class="text-sm md:text-base text-[#a3a3a3] font-light">
+        Compara el gimnasio masivo de siempre con el servicio boutique de Impulsa Fit.
+      </p>
+    </div>
+
+    <!-- Table Wrapper -->
+    <div class="overflow-x-auto border border-[#ffffff08] rounded-lg reveal delay-100 bg-black">
+      <table class="w-full text-left border-collapse select-none">
+        <thead>
+          <tr class="border-b border-[#ffffff0a] bg-[#0b0b0b]">
+            <th class="p-6 text-sm font-bold tracking-widest text-[#737373] uppercase">SERVICIO</th>
+            <th class="p-6 text-sm font-bold tracking-widest text-[#737373] uppercase">GYM TRADICIONAL</th>
+            <th class="p-6 text-sm font-bold tracking-widest text-white uppercase bg-neutral-900">IMPULSA FIT</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#ffffff05] text-sm">
+          
+          <tr>
+            <td class="p-6 font-bold text-white">Coaches en Sala</td>
+            <td class="p-6 text-[#737373]">1 profesor para 50+ personas</td>
+            <td class="p-6 text-white font-medium bg-neutral-900">Máximo 3 alumnos por Coach</td>
+          </tr>
+
+          <tr>
+            <td class="p-6 font-bold text-white">Planificación de Fuerza</td>
+            <td class="p-6 text-[#737373]">Rutina estandarizada igual para todos</td>
+            <td class="p-6 text-white font-medium bg-neutral-900">Estructura 100% individual</td>
+          </tr>
+
+          <tr>
+            <td class="p-6 font-bold text-white">Protocolo de Lesiones</td>
+            <td class="p-6 text-[#737373]">Entrenas bajo tu propio riesgo</td>
+            <td class="p-6 text-white font-medium bg-neutral-900">Plan adaptado a lesiones clínicas</td>
+          </tr>
+
+          <tr>
+            <td class="p-6 font-bold text-white">Evaluación Nutricional</td>
+            <td class="p-6 text-[#737373]">No incluye (cobro extra alto)</td>
+            <td class="p-6 text-white font-medium bg-neutral-900">Incluido en membresía</td>
+          </tr>
+
+          <tr>
+            <td class="p-6 font-bold text-white">Aglomeraciones</td>
+            <td class="p-6 text-[#737373]">Frecuentes, esperas largas por máquinas</td>
+            <td class="p-6 text-white font-medium bg-neutral-900">Sin esperas, aforo estrictamente limitado</td>
+          </tr>
+
+          <tr>
+            <td class="p-6 font-bold text-white">Agendamiento</td>
+            <td class="p-6 text-[#737373]">Fijo o sin control (esperas fila)</td>
+            <td class="p-6 text-white font-medium bg-neutral-900">Flexible vía App Fiti</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

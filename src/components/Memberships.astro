@@ -1,0 +1,449 @@
+---
+// Memberships.astro - Interactive memberships grid with toggle
+---
+
+<section id="membresias" class="py-24 bg-[#050505] relative border-b border-[#ffffff0a]">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Section Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <span class="inline-block text-xs font-bold tracking-widest text-[#737373] border border-[#ffffff08] px-3 py-1 rounded bg-[#0b0b0b] mb-4 uppercase">
+        Escoge tu Estructura
+      </span>
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight mb-4 uppercase">
+        Membresías <span class="text-metallic font-black">Impulsa</span>
+      </h2>
+      <p class="text-base md:text-lg text-[#a3a3a3] font-light">
+        Elige el programa y la modalidad que mejor se adapte a tus objetivos. Nuestras membresías te entregan estructura completa, acompañamiento profesional continuo y acceso exclusivo.
+      </p>
+    </div>
+
+    <!-- Toggle Selector (Semestral vs Mensual) -->
+    <div class="flex justify-center items-center gap-4 mb-16 reveal delay-100">
+      <span class="text-sm font-bold tracking-wider cursor-pointer transition-colors duration-200 select-none text-white" id="label-plus">
+        PLUS <span class="text-[10px] bg-white text-black px-1.5 py-0.5 rounded font-black ml-1">SEMESTRAL</span>
+      </span>
+      
+      <!-- Switch Toggle -->
+      <button 
+        id="billing-toggle" 
+        class="w-16 h-8 bg-neutral-800 rounded-full p-1 relative transition-colors duration-300 focus:outline-none"
+        aria-label="Alternar periodicidad de cobro"
+      >
+        <span class="block w-6 h-6 bg-white rounded-full transition-transform duration-300 transform translate-x-0" id="toggle-knob"></span>
+      </button>
+
+      <span class="text-sm font-bold tracking-wider cursor-pointer transition-colors duration-200 select-none text-[#737373]" id="label-standard">
+        STANDARD <span class="text-[10px] border border-[#ffffff15] text-[#a3a3a3] px-1.5 py-0.5 rounded font-bold ml-1">MENSUAL</span>
+      </span>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      
+      <!-- CARD 1: SALUD (8 Sesiones/mes) -->
+      <div class="premium-card flex flex-col justify-between p-8 group reveal delay-100">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-white mb-1">PROGRAMA SALUD</h3>
+              <p class="text-xs font-bold text-[#737373] tracking-widest uppercase">8 Sesiones con Coach/Mes</p>
+            </div>
+            <!-- Icon -->
+            <span class="p-2.5 rounded bg-neutral-900 border border-[#ffffff0a]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#a3a3a3]">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Price Display -->
+          <div class="mb-8">
+            <div class="flex items-baseline text-white">
+              <span class="text-xl font-bold tracking-tight">$</span>
+              <!-- Plus Price -->
+              <span class="text-5xl font-black italic tracking-tighter transition-all duration-300" id="price-salud">134.990</span>
+              <span class="text-sm font-semibold text-[#737373] ml-2">/ mes</span>
+            </div>
+            <p class="text-xs text-[#737373] mt-2" id="desc-salud">Ahorras $25.000 CLP cada mes · Pago automático recurrente</p>
+          </div>
+
+          <hr class="border-[#ffffff0a] mb-8" />
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>8 sesiones</strong> de fuerza al mes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>1 sesión</strong> de masoterapia mensual</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]">Rutina personalizada en tu celular</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]" id="agendamiento-salud">Agendamiento Priority vía Fiti</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]">Acceso libre a Gimnasio / Sala</span>
+            </li>
+            <li class="flex items-start gap-3 text-neutral-500" id="congelar-salud-li">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5" id="congelar-salud-check">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]" id="congelar-salud">Permite congelar hasta 15 días</span>
+            </li>
+          </ul>
+        </div>
+
+        <a 
+          href="https://es.fiti.app/impulsafit/1/page/landing-page/checkout/34/0" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-outline w-full py-3 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all text-center"
+          id="btn-salud"
+        >
+          Comenzar Programa
+        </a>
+      </div>
+
+      <!-- CARD 2: BÁSICO (12 Sesiones/mes) - RECOMENDADO -->
+      <div class="premium-card flex flex-col justify-between p-8 border-neutral-700 relative group reveal delay-200">
+        <!-- Recommended Badge -->
+        <span class="absolute top-4 right-4 bg-white text-black text-[10px] font-black italic tracking-widest px-2.5 py-1 rounded">
+          RECOMENDADO
+        </span>
+        
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-white mb-1">PROGRAMA BÁSICO</h3>
+              <p class="text-xs font-bold text-[#737373] tracking-widest uppercase">12 Sesiones con Coach/Mes</p>
+            </div>
+            <!-- Icon -->
+            <span class="p-2.5 rounded bg-neutral-900 border border-[#ffffff0a]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Price Display -->
+          <div class="mb-8">
+            <div class="flex items-baseline text-white">
+              <span class="text-xl font-bold tracking-tight">$</span>
+              <!-- Plus Price -->
+              <span class="text-5xl font-black italic tracking-tighter transition-all duration-300" id="price-basico">154.990</span>
+              <span class="text-sm font-semibold text-[#737373] ml-2">/ mes</span>
+            </div>
+            <p class="text-xs text-[#737373] mt-2" id="desc-basico">Ahorras $25.000 CLP cada mes · Pago automático recurrente</p>
+          </div>
+
+          <hr class="border-[#ffffff0a] mb-8" />
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>12 sesiones</strong> de fuerza al mes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>1ª Consulta nutricional</strong> GRATIS</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]">Rutina personalizada en tu celular</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]" id="agendamiento-basico">Agendamiento Priority vía Fiti</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]">Acceso libre a Gimnasio / Sala</span>
+            </li>
+          </ul>
+        </div>
+
+        <a 
+          href="https://es.fiti.app/impulsafit/1/page/landing-page/checkout/32/0" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-platinum w-full py-3 text-center"
+          id="btn-basico"
+        >
+          Comenzar Programa
+        </a>
+      </div>
+
+      <!-- CARD 3: BIENESTAR (12 Sesiones/mes + Masoterapia) -->
+      <div class="premium-card flex flex-col justify-between p-8 group reveal delay-300">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="text-2xl font-bold tracking-tight text-white mb-1">PROGRAMA BIENESTAR</h3>
+              <p class="text-xs font-bold text-[#737373] tracking-widest uppercase">12 Sesiones con Coach/Mes</p>
+            </div>
+            <!-- Icon -->
+            <span class="p-2.5 rounded bg-neutral-900 border border-[#ffffff0a]">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#a3a3a3]">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Price Display -->
+          <div class="mb-8">
+            <div class="flex items-baseline text-white">
+              <span class="text-xl font-bold tracking-tight">$</span>
+              <!-- Plus Price -->
+              <span class="text-5xl font-black italic tracking-tighter transition-all duration-300" id="price-bienestar">164.990</span>
+              <span class="text-sm font-semibold text-[#737373] ml-2">/ mes</span>
+            </div>
+            <p class="text-xs text-[#737373] mt-2" id="desc-bienestar">Ahorras $25.000 CLP cada mes · Pago automático recurrente</p>
+          </div>
+
+          <hr class="border-[#ffffff0a] mb-8" />
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>12 sesiones</strong> de fuerza al mes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>1 sesión</strong> de masoterapia mensual</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]"><strong>1ª Consulta nutricional</strong> GRATIS</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]">Rutina personalizada en tu celular</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]" id="agendamiento-bienestar">Agendamiento Priority vía Fiti</span>
+            </li>
+            <li class="flex items-start gap-3 text-neutral-500" id="congelar-bienestar-li">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white flex-shrink-0 mt-0.5" id="congelar-bienestar-check">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-sm text-[#e5e5e5]" id="congelar-bienestar">Permite congelar hasta 1 mes</span>
+            </li>
+          </ul>
+        </div>
+
+        <a 
+          href="https://es.fiti.app/impulsafit/1/page/landing-page/checkout/33/0" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-outline w-full py-3 group-hover:bg-white group-hover:text-black group-hover:border-white transition-all text-center"
+          id="btn-bienestar"
+        >
+          Comenzar Programa
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Small Terms & Conditions Footer -->
+    <div class="mt-12 text-center text-xs text-[#525252] max-w-2xl mx-auto leading-relaxed reveal delay-400" id="terms-notes">
+      * La membresía <strong>PLUS (Semestral)</strong> tiene una permanencia mínima de 6 meses con cargo mensual automático. En caso de retiro anticipado, aplica una penalización del 25% sobre el saldo pendiente de las mensualidades restantes.
+    </div>
+
+  </div>
+</section>
+
+<!-- Billing Selector Controller Script -->
+<script>
+  function initMemberships() {
+    const toggleBtn = document.getElementById('billing-toggle');
+    if (!toggleBtn) return; // Prevent errors if component isn't on the page
+
+    const toggleKnob = document.getElementById('toggle-knob');
+    const labelPlus = document.getElementById('label-plus');
+    const labelStandard = document.getElementById('label-standard');
+    
+    // Price span targets
+    const priceSalud = document.getElementById('price-salud');
+    const priceBasico = document.getElementById('price-basico');
+    const priceBienestar = document.getElementById('price-bienestar');
+    
+    // Description elements
+    const descSalud = document.getElementById('desc-salud');
+    const descBasico = document.getElementById('desc-basico');
+    const descBienestar = document.getElementById('desc-bienestar');
+    
+    // Text features that change
+    const agendamientoSalud = document.getElementById('agendamiento-salud');
+    const agendamientoBasico = document.getElementById('agendamiento-basico');
+    const agendamientoBienestar = document.getElementById('agendamiento-bienestar');
+    
+    // Congelar features
+    const congelarSaludLi = document.getElementById('congelar-salud-li');
+    const congelarBienestarLi = document.getElementById('congelar-bienestar-li');
+    const congelarSalud = document.getElementById('congelar-salud');
+    const congelarBienestar = document.getElementById('congelar-bienestar');
+    
+    // Buttons (Fiti Checkout links)
+    const btnSalud = document.getElementById('btn-salud');
+    const btnBasico = document.getElementById('btn-basico');
+    const btnBienestar = document.getElementById('btn-bienestar');
+    
+    // Footnote text
+    const termsNotes = document.getElementById('terms-notes');
+
+    let isStandard = false; // Starts in PLUS (Semestral)
+
+    function updatePrices() {
+      if (isStandard) {
+        // Toggle animation: move knob to right
+        toggleKnob?.classList.add('translate-x-8');
+        toggleKnob?.classList.remove('translate-x-0');
+        
+        // Active label colors
+        labelStandard?.classList.add('text-white');
+        labelStandard?.classList.remove('text-[#737373]');
+        labelPlus?.classList.add('text-[#737373]');
+        labelPlus?.classList.remove('text-white');
+
+        // Set Standard prices
+        if (priceSalud) priceSalud.textContent = '159.990';
+        if (priceBasico) priceBasico.textContent = '179.990';
+        if (priceBienestar) priceBienestar.textContent = '189.990';
+
+        // Set Standard descriptions
+        if (descSalud) descSalud.textContent = 'Sin fidelidad · Cancela cuando quieras sin penalizaciones';
+        if (descBasico) descBasico.textContent = 'Sin fidelidad · Cancela cuando quieras sin penalizaciones';
+        if (descBienestar) descBienestar.textContent = 'Sin fidelidad · Cancela cuando quieras sin penalizaciones';
+
+        // Set Standard features (Standard Scheduling)
+        if (agendamientoSalud) agendamientoSalud.innerHTML = 'Agendamiento standard vía Fiti';
+        if (agendamientoBasico) agendamientoBasico.innerHTML = 'Agendamiento standard vía Fiti';
+        if (agendamientoBienestar) agendamientoBienestar.innerHTML = 'Agendamiento standard vía Fiti';
+
+        // Set Standard congelar features (opacity reduction / block)
+        if (congelarSaludLi) congelarSaludLi.classList.add('opacity-40');
+        if (congelarSalud) congelarSalud.innerHTML = '<del>Permite congelar hasta 15 días</del>';
+        
+        if (congelarBienestarLi) congelarBienestarLi.classList.add('opacity-40');
+        if (congelarBienestar) congelarBienestar.innerHTML = '<del>Permite congelar hasta 1 mes</del>';
+
+        // Update Checkout URLs to STANDARD (Monthly)
+        if (btnSalud) btnSalud.href = 'https://es.fiti.app/impulsafit/1/page/landing-page/checkout/35/0';
+        if (btnBasico) btnBasico.href = 'https://es.fiti.app/impulsafit/1/page/landing-page/checkout/37/0';
+        if (btnBienestar) btnBienestar.href = 'https://es.fiti.app/impulsafit/1/page/landing-page/checkout/36/0';
+
+        // Update footer terms note
+        if (termsNotes) {
+          termsNotes.innerHTML = '* La membresía <strong>STANDARD (Mensual)</strong> no tiene permanencia mínima ni penalizaciones. Se renueva automáticamente de forma mensual hasta que decidas darla de baja desde tu perfil de usuario.';
+        }
+      } else {
+        // Toggle animation: move knob to left
+        toggleKnob?.classList.add('translate-x-0');
+        toggleKnob?.classList.remove('translate-x-8');
+        
+        // Active label colors
+        labelPlus?.classList.add('text-white');
+        labelPlus?.classList.remove('text-[#737373]');
+        labelStandard?.classList.add('text-[#737373]');
+        labelStandard?.classList.remove('text-white');
+
+        // Set Plus prices
+        if (priceSalud) priceSalud.textContent = '134.990';
+        if (priceBasico) priceBasico.textContent = '154.990';
+        if (priceBienestar) priceBienestar.textContent = '164.990';
+
+        // Set Plus descriptions
+        if (descSalud) descSalud.textContent = 'Ahorras $25.000 CLP cada mes · Pago automático recurrente';
+        if (descBasico) descBasico.textContent = 'Ahorras $25.000 CLP cada mes · Pago automático recurrente';
+        if (descBienestar) descBienestar.textContent = 'Ahorras $25.000 CLP cada mes · Pago automático recurrente';
+
+        // Set Plus features (Priority Scheduling)
+        if (agendamientoSalud) agendamientoSalud.innerHTML = '<strong>Agendamiento Priority</strong> vía Fiti';
+        if (agendamientoBasico) agendamientoBasico.innerHTML = '<strong>Agendamiento Priority</strong> vía Fiti';
+        if (agendamientoBienestar) agendamientoBienestar.innerHTML = '<strong>Agendamiento Priority</strong> vía Fiti';
+
+        // Restore congelar features
+        if (congelarSaludLi) congelarSaludLi.classList.remove('opacity-40');
+        if (congelarSalud) congelarSalud.innerHTML = 'Permite congelar hasta 15 días';
+        
+        if (congelarBienestarLi) congelarBienestarLi.classList.remove('opacity-40');
+        if (congelarBienestar) congelarBienestar.innerHTML = 'Permite congelar hasta 1 mes';
+
+        // Update Checkout URLs to PLUS (Semestral)
+        if (btnSalud) btnSalud.href = 'https://es.fiti.app/impulsafit/1/page/landing-page/checkout/34/0';
+        if (btnBasico) btnBasico.href = 'https://es.fiti.app/impulsafit/1/page/landing-page/checkout/32/0';
+        if (btnBienestar) btnBienestar.href = 'https://es.fiti.app/impulsafit/1/page/landing-page/checkout/33/0';
+
+        // Update footer terms note
+        if (termsNotes) {
+          termsNotes.innerHTML = '* La membresía <strong>PLUS (Semestral)</strong> tiene una permanencia mínima de 6 meses con cargo mensual automático. En caso de retiro anticipado, aplica una penalización del 25% sobre el saldo pendiente de las mensualidades restantes.';
+        }
+      }
+    }
+
+    // Toggle click listeners
+    toggleBtn.addEventListener('click', () => {
+      isStandard = !isStandard;
+      updatePrices();
+    });
+
+    labelPlus?.addEventListener('click', () => {
+      if (isStandard) {
+        isStandard = false;
+        updatePrices();
+      }
+    });
+
+    labelStandard?.addEventListener('click', () => {
+      if (!isStandard) {
+        isStandard = true;
+        updatePrices();
+      }
+    });
+  }
+
+  // Bind to initial load and page changes
+  initMemberships();
+  document.addEventListener('astro:page-load', initMemberships);
+</script>

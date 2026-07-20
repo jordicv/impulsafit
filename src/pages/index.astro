@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Method from '../components/Method.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Impulsa Fit | Entrenamiento Boutique Personalizado en Concepción">
+  
+  <!-- Header / Navigation -->
+  <Header />
+
+  <!-- Hero Background Video and CTAs -->
+  <Hero />
+
+  <main>
+    <!-- El Método IMPULSA (Dolores, Siglas y Comparativa) -->
+    <Method />
+
+    <!-- Resumen del Servicio & Experiencia Boutique -->
+    <section class="py-24 bg-[#050505] border-t border-b border-[#ffffff0a] relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+          
+          <!-- Card Resumen Servicio -->
+          <div class="premium-card p-10 flex flex-col justify-between reveal">
+            <div>
+              <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-3 block">El Programa</span>
+              <h3 class="text-3xl font-black italic tracking-tight text-white mb-6 uppercase">
+                Acompañamiento <span class="text-metallic">Estructurado</span>
+              </h3>
+              <p class="text-sm text-[#a3a3a3] leading-relaxed mb-6 font-light">
+                No entrenas solo. Cada una de tus sesiones está dirigida y supervisada por kinesiólogos certificados, adaptando las cargas en tiempo real y garantizando resultados reales sin riesgos de lesión.
+              </p>
+              <ul class="space-y-3 mb-8 text-xs text-[#d4d4d4] font-medium">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  Máximo 3 alumnos por coach en sala
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  Kinesiología de fuerza aplicada
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  Asesoría nutricional y masoterapia incluidas
+                </li>
+              </ul>
+            </div>
+            <a href="/servicio" class="btn-outline text-xs py-3 w-full text-center rounded-full">
+              Ver Detalles del Servicio
+            </a>
+          </div>
+
+          <!-- Card Resumen Boutique -->
+          <div class="premium-card p-10 flex flex-col justify-between reveal delay-100">
+            <div>
+              <span class="text-xs font-bold tracking-widest text-[#737373] uppercase mb-3 block">El Espacio</span>
+              <h3 class="text-3xl font-black italic tracking-tight text-white mb-6 uppercase">
+                Experiencia <span class="text-metallic">Boutique</span>
+              </h3>
+              <p class="text-sm text-[#a3a3a3] leading-relaxed mb-6 font-light">
+                Un entorno exclusivo en el centro de Concepción alejado de las aglomeraciones de los gimnasios comerciales. Sin filas para usar máquinas, toallas higienizadas de cortesía y duchas privadas.
+              </p>
+              <ul class="space-y-3 mb-8 text-xs text-[#d4d4d4] font-medium">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  Privacidad y concentración garantizada
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  Equipamiento de fuerza de gama premium
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                  Ubicación central (Sede Castellón)
+                </li>
+              </ul>
+            </div>
+            <a href="/servicio#boutique" class="btn-platinum text-xs py-3 w-full text-center rounded-full">
+              Explorar el Estudio
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+</Layout>
+
+<!-- Scroll Reveal Animations Script (Supports Page Transitions) -->
+<script>
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  }
+
+  // Bind to default load and view transition swap
+  initReveal();
+  document.addEventListener('astro:after-swap', initReveal);
+</script>
