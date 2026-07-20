@@ -1,21 +1,25 @@
 ---
 // Method.astro - Core methodology, pain points, service phases, and comparison table
+import { Image } from 'astro:assets';
+import gymImg from '../assets/images/IMG_8016.JPG';
 ---
 
 <!-- SECTION 1: EL DOLOR -->
 <section class="py-24 bg-black border-b border-[#ffffff0a] relative overflow-hidden" id="metodo">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <!-- Image/Visual Column (Using real photo optimized by Astro or simple structured outline) -->
+      <!-- Image/Visual Column -->
       <div class="lg:col-span-5 reveal">
         <div class="premium-card p-2 border-[#ffffff15] rounded-xl overflow-hidden aspect-[4/5] relative group">
           <!-- Real Gym Photo (e.g. IMG_8016 showing training environment) -->
           <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 pointer-events-none"></div>
-          <img 
-            src="/src/assets/images/IMG_8016.JPG" 
+          <Image 
+            src={gymImg} 
             alt="Entrenamiento en Sede Impulsa Fit" 
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            loading="lazy"
+            width={400}
+            height={500}
+            format="webp"
           />
           <div class="absolute bottom-6 left-6 right-6 z-20">
             <span class="text-xs font-bold tracking-widest text-[#a3a3a3] uppercase block mb-1">Tu espacio de entrenamiento</span>
