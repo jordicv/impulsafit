@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Stats from '../components/Stats.astro';
 import Method from '../components/Method.astro';
+import Reviews from '../components/Reviews.astro';
+import Sedes from '../components/Sedes.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -21,6 +23,9 @@ import Footer from '../components/Footer.astro';
   <main>
     <!-- El Método IMPULSA (Dolores, Siglas y Comparativa) -->
     <Method />
+
+    <!-- Reseñas de Google de Alumnos -->
+    <Reviews />
 
     <!-- Resumen del Servicio & Experiencia Boutique -->
     <section class="py-24 bg-[#050505] border-t border-b border-[#ffffff0a] relative overflow-hidden">
@@ -90,6 +95,9 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </section>
+
+    <!-- Sección Ubicación, Sede y Mapa de Google Maps -->
+    <Sedes />
   </main>
 
   <!-- Footer -->

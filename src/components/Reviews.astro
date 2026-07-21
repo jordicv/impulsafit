@@ -1,0 +1,137 @@
+---
+// Reviews.astro - Google Reviews Component for Impulsa Fit
+const reviews = [
+  {
+    author: "Carolina Natalia Ramírez Zapata",
+    role: "Alumno Impulsa Fit",
+    time: "Hace 3 meses",
+    stars: 5,
+    text: "Increíble servicio, coachs tremendamente preparados y profesionales, excelente ambiente. Como persona que nunca hacía ejercicio y le tenía rechazo a los gyms puedo decir que este me motivó un montón y lo recomiendo 100%.",
+    highlight: "Pasó de rechazar los gyms a motivarse"
+  },
+  {
+    author: "Maurice Burgos",
+    role: "Alumno Impulsa Fit",
+    time: "Hace 3 semanas",
+    stars: 5,
+    text: "Mi experiencia en este gimnasio ha sido muy positiva. Es un lugar muy familiar y cómodo. La limpieza tanto de las máquinas como de las instalaciones en general es excelente. Claudio y sus coach son muy atentos, siempre dispuestos a ayudar.",
+    highlight: "Ambiente familiar y excelente limpieza"
+  },
+  {
+    author: "Ignacia Torres",
+    role: "Alumno Impulsa Fit",
+    time: "Hace 1 mes",
+    stars: 5,
+    text: "Muy buen ambiente!! Los profes son muy amables y están súper pendientes de todo, motiva mucho el seguimiento que hacen ya que no se siente que estés a la deriva 🥹 Recomendadísimo!! 👌👌",
+    highlight: "No se siente estar a la deriva"
+  },
+  {
+    author: "Eduardo Mora Garrido",
+    role: "Hace 1 semana",
+    stars: 5,
+    text: "El gym cuenta con la implementación suficiente, los entrenadores muy atentos a tu ejecución y adaptan la rutina a tus necesidades. Lo recomiendo si es que quieren entrenar tranquilos y seguros.",
+    highlight: "Rutina adaptada y entrenamiento seguro"
+  },
+  {
+    author: "Francisca Bahamonde",
+    role: "Hace 7 meses",
+    stars: 5,
+    text: "1000000/10 ⭐ Por lejos el mejor servicio de entrenamiento personalizado. Gracias a ellos he logrado compatibilizar trabajo, maternidad y ejercicio sin perder la motivación ni un solo día. ✨",
+    highlight: "Trabajo, maternidad y ejercicio"
+  },
+  {
+    author: "Cristian Sanchez",
+    role: "Hace 1 mes",
+    stars: 5,
+    text: "Llevo 4 meses entrenando en Impulsa Fit y ha sido una experiencia excelente. Desde el primer día he recibido una atención muy personalizada, con rutinas adaptadas a mis objetivos y un seguimiento constante.",
+    highlight: "Atención personalizada y progreso real"
+  }
+];
+
+const googleReviewsUrl = "https://www.google.com/search?client=safari&hs=HPdV&sca_esv=160fecc51e0f0354&rls=en&sxsrf=APpeQnty_sEnCusi7NSNDei_7Z7b-spS7g:1784670877990&q=Impulsa+Fit+ccp+Reseñas&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNLOwMDYxMjU1NDQ1MrSwMDQws9jAyPiKUcIzt6A0pzhRwS2zRCE5uUAhKLU49fDGxOJFrDilADof72JRAAAA&rldimm=16883425511521881068&tbm=lcl&hl=es-DE&sa=X&ved=2ahUKEwjV0eSN4eSVAxUWQPEDHRlKOlQQ9fQKegQIPxAG#lkt=LocalPoiReviews";
+---
+
+<section class="py-24 bg-[#0a0a0c] border-b border-[#ffffff0a] relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Encabezado de la sección -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <div class="inline-flex items-center gap-2 bg-[#ffffff08] border border-[#ffffff15] px-4 py-1.5 rounded-full mb-4">
+        <!-- SVG Icono Google G -->
+        <svg class="w-4 h-4" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span class="text-xs font-bold text-white tracking-widest uppercase">Reseñas en Google</span>
+      </div>
+      
+      <h2 class="text-3xl md:text-5xl font-black italic tracking-tight text-white mb-4 uppercase">
+        Lo que dicen <span class="text-metallic">Nuestros Alumnos</span>
+      </h2>
+      
+      <!-- Calificación 5.0 -->
+      <div class="flex items-center justify-center gap-3 mt-4">
+        <span class="text-3xl font-black text-white">5.0</span>
+        <div class="flex text-amber-400 gap-1 text-xl">
+          ★★★★★
+        </div>
+        <span class="text-xs text-[#737373] font-medium uppercase tracking-wider">(89 opiniones en Google)</span>
+      </div>
+    </div>
+
+    <!-- Grid de Reseñas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {reviews.map((rev, idx) => (
+        <div class={`premium-card p-6 flex flex-col justify-between reveal delay-${(idx % 3) * 100 + 100}`}>
+          <div>
+            <!-- Header Reseña -->
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h3 class="text-base font-bold text-white tracking-tight leading-snug">{rev.author}</h3>
+                <span class="text-xs text-[#737373] block">{rev.time}</span>
+              </div>
+              <div class="flex text-amber-400 text-sm">
+                ★★★★★
+              </div>
+            </div>
+
+            <!-- Destacado -->
+            <span class="inline-block text-[11px] font-semibold text-white/90 bg-white/10 px-2.5 py-0.5 rounded-full mb-3">
+              "{rev.highlight}"
+            </span>
+
+            <!-- Texto de opinión -->
+            <p class="text-xs text-[#a3a3a3] leading-relaxed italic font-light">
+              "{rev.text}"
+            </p>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-[#ffffff0a] flex items-center justify-between">
+            <span class="text-[10px] text-[#737373] uppercase tracking-wider font-semibold">Reseña Verificada</span>
+            <svg class="w-3.5 h-3.5 text-[#737373]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Ver más opiniones en Google -->
+    <div class="text-center reveal">
+      <a 
+        href={googleReviewsUrl}
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="btn-outline text-xs py-3.5 px-8 rounded-full inline-flex items-center gap-3 group"
+      >
+        <span>¿Quieres ver más opiniones? Presiona acá</span>
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
