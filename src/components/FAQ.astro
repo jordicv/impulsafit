@@ -65,7 +65,7 @@
         </button>
         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
           <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
-            Sí. Nuestro equipo incluye kinesiólogos titulados y especialistas en biomecánica clínica. En la evaluación inicial registramos tus dolores y lesiones para estructurar una rutina con ejercicios seguros que protejan tu espalda, rodillas y hombros, enfocándonos en fortalecer los músculos de soporte para reducir tu dolor crónico.
+            Sí. Nuestro equipo incluye preparadores físicos calificados y aptos para adaptar un programa de entrenamiento para cada caso puntual.
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@
         </button>
         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black">
           <div class="p-6 text-sm text-[#737373] leading-relaxed border-t border-[#ffffff05]">
-            Incluye una consulta con nuestro nutricionista clínico (Elso Molina), una evaluación corporal mediante bioimpedancia (InBody) que detalla tu masa muscular y grasa por segmentos corporales, y la entrega de una pauta alimenticia personalizada adaptada a tus objetivos físicos y de salud actuales.
+            Incluye una consulta con nuestro nutricionista deportivo (Elso Molina), una evaluación antropométrica que detalla tu masa muscular y grasa por segmentos corporales, y la entrega de una pauta alimenticia personalizada adaptada a tus objetivos físicos y de salud actuales.
           </div>
         </div>
       </div>
@@ -99,7 +99,10 @@
       const content = item.querySelector('.accordion-content') as HTMLElement;
       const icon = item.querySelector('.accordion-icon') as HTMLElement;
 
-      button?.addEventListener('click', () => {
+      if (!button || button.dataset.faqBound) return;
+      button.dataset.faqBound = "true";
+
+      button.addEventListener('click', () => {
         const isCurrentlyActive = item.classList.contains('active');
 
         // Close all other accordions first
