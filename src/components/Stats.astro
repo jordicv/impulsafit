@@ -1,0 +1,107 @@
+---
+// Stats.astro - Reusable animated stats counter
+---
+
+<section class="py-16 bg-black border-b border-[#ffffff0a] relative select-none">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center" id="stats-container">
+      
+      <!-- Stat 1 -->
+      <div class="flex flex-col items-center">
+        <span class="text-4xl md:text-5xl font-black italic text-metallic tracking-tight mb-2 uppercase">
+          +<span class="stat-number" data-target="500">0</span>
+        </span>
+        <span class="text-[10px] md:text-xs font-bold tracking-widest text-[#a3a3a3] uppercase">Clientes Atendidos</span>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="flex flex-col items-center">
+        <span class="text-4xl md:text-5xl font-black italic text-metallic tracking-tight mb-2 uppercase">
+          +<span class="stat-number" data-target="70">0</span>
+        </span>
+        <span class="text-[10px] md:text-xs font-bold tracking-widest text-[#a3a3a3] uppercase">Clientes Activos</span>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="flex flex-col items-center">
+        <span class="text-4xl md:text-5xl font-black italic text-metallic tracking-tight mb-2 uppercase">
+          +<span class="stat-number" data-target="80">0</span>
+        </span>
+        <span class="text-[10px] md:text-xs font-bold tracking-widest text-[#a3a3a3] uppercase leading-tight max-w-[150px]">Recomiendan en Google</span>
+      </div>
+
+      <!-- Stat 4 -->
+      <div class="flex flex-col items-center">
+        <span class="text-4xl md:text-5xl font-black italic text-metallic tracking-tight mb-2 uppercase">
+          +<span class="stat-number" data-target="8">0</span>
+        </span>
+        <span class="text-[10px] md:text-xs font-bold tracking-widest text-[#a3a3a3] uppercase">Años de Experiencia</span>
+      </div>
+
+      <!-- Stat 5 -->
+      <div class="flex flex-col items-center col-span-2 md:col-span-1">
+        <span class="text-4xl md:text-5xl font-black italic text-metallic tracking-tight mb-2 uppercase">
+          <span class="stat-number" data-target="4">0</span>
+        </span>
+        <span class="text-[10px] md:text-xs font-bold tracking-widest text-[#a3a3a3] uppercase">Preparadores Físicos</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function initStats() {
+    const container = document.getElementById('stats-container');
+    if (!container) return;
+
+    // Reset indicator if layout swaps on routing
+    delete container.dataset.animated;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !container.dataset.animated) {
+          container.dataset.animated = 'true';
+          animateNumbers();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    observer.observe(container);
+
+    function animateNumbers() {
+      const numbers = container!.querySelectorAll('.stat-number');
+      numbers.forEach(num => {
+        const target = parseInt(num.getAttribute('data-target') || '0', 10);
+        const duration = 2500; // Slow, premium animation (2.5 seconds)
+        const startTime = performance.now();
+
+        function update(currentTime: number) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Easing function: easeOutExpo
+          const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const currentVal = Math.floor(easeProgress * target);
+
+          num.textContent = currentVal.toString();
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            num.textContent = target.toString();
+          }
+        }
+
+        requestAnimationFrame(update);
+      });
+    }
+  }
+
+  initStats();
+  document.addEventListener('astro:after-swap', initStats);
+</script>
