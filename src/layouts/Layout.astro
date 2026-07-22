@@ -51,5 +51,26 @@ const {
   </head>
   <body class="bg-black text-white antialiased overflow-x-hidden">
     <slot />
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/56945194334?text=Hola!%20Me%20gustaría%20saber%20más%20sobre%20ImpulsaFit."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-40 group"
+      aria-label="Contactar por WhatsApp"
+      id="whatsapp-float"
+    >
+      <!-- Pulse ring -->
+      <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 group-hover:opacity-30"></span>
+      <!-- Button -->
+      <span class="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40">
+        <img src="/images/whatsapp-logo.svg" alt="WhatsApp" class="w-9 h-9 md:w-10 md:h-10 drop-shadow-md" />
+      </span>
+      <!-- Tooltip -->
+      <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-white text-black text-xs font-bold tracking-wide px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+        ¡Escríbenos!
+      </span>
+    </a>
   </body>
 </html>
